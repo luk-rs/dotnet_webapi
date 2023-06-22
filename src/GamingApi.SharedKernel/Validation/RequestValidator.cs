@@ -1,7 +1,4 @@
-﻿using System.Net;
-using FluentValidation;
-using MediatR;
-using MediatR.Pipeline;
+﻿using MediatR.Pipeline;
 
 namespace GamingApi.SharedKernel.Validation;
 

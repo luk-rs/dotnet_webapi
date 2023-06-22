@@ -24,23 +24,9 @@ public class ExceptionFormatterMiddleware : IMiddleware
 
     private static int ToStatusCode(Exception ex)
     {
-        static HttpStatusCode readStatusCodeFromValidationException(ValidationException ex)
-        {
-            const string key = nameof(HttpStatusCode);
-            if (!ex.Data.Contains(key))
-                return HttpStatusCode.InternalServerError;
-
-            var value = ex.Data[key];
-
-            if (value == default)
-                return HttpStatusCode.InternalServerError;
-
-            return value is HttpStatusCode code ? code : HttpStatusCode.InternalServerError;
-        }
-
         var statusCode = ex switch
         {
-            ValidationException e => readStatusCodeFromValidationException(e),
+            ValidationException => HttpStatusCode.BadRequest,
             _ => HttpStatusCode.InternalServerError
         };
 

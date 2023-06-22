@@ -27,4 +27,10 @@
     <ProjectReference Include="..\GamingApi.Games\GamingApi.Games.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="testData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

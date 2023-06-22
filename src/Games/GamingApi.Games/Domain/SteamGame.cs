@@ -1,7 +1,5 @@
-﻿using System.Text.Json.Serialization;
-
-namespace GamingApi.Games.Domain;
-public record SteamGame
+﻿namespace GamingApi.Games.Domain;
+public sealed record SteamGame
 {
     public int AppId { get; init; }
     public string Name { get; init; } = string.Empty;
@@ -9,7 +7,7 @@ public record SteamGame
     public string Developer { get; init; } = string.Empty;
     public string Publisher { get; init; } = string.Empty;
     public string Genre { get; init; } = string.Empty;
-    public Dictionary<string, int> Tags { get; init; } = new Dictionary<string, int>();
+    public Dictionary<string, int> Tags { get; init; } = new();
     public string Type { get; init; } = string.Empty;
     public List<string> Categories { get; init; } = new List<string>();
     public string Owners { get; init; } = string.Empty;
@@ -20,7 +18,8 @@ public record SteamGame
     public string Discount { get; init; } = string.Empty;
     public int CCU { get; init; }
     public string Languages { get; init; } = string.Empty;
-    public Dictionary<string, bool> Platforms { get; init; } = new Dictionary<string, bool>();
+    public Platforms Platforms { get; init; } = new();
+
     [JsonPropertyName("release_date")]
     public DateTime ReleaseDate { get; init; }
     public int RequiredAge { get; init; }

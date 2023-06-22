@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace GamingApi.SharedKernel.IoC;
+﻿namespace GamingApi.SharedKernel.IoC;
 public static class ServiceCollectionScanExtensions
 {
     public static IServiceCollection ScanAsSelf<T>(this IServiceCollection services, Assembly[] assemblies) => services.ScanAsSelf(assemblies, typeof(T));

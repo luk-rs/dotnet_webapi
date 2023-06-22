@@ -1,7 +1,6 @@
 ﻿using GamingApi.Games.Domain;
 using GamingApi.Games.DTOs;
 using GamingApi.SharedKernel.Mapping;
-using Riok.Mapperly.Abstractions;
 
 namespace GamingApi.Games.Mappers;
 
@@ -13,13 +12,16 @@ public partial class SteamGame2GameDtoMapper : Mapper<SteamGame, GameDto>
     [MapProperty(nameof(SteamGame.AppId), nameof(GameDto.Id))]
     public partial GameDto Map(SteamGame source);
 
-    public static PlatformDto Dictionary2PlatformDto(Dictionary<string, bool> dictionary)
+    public static Dictionary<string, bool> Dictionary2PlatformDto(Platforms platform)
     {
-        return new PlatformDto
+        var dictionary = new Dictionary<string, bool>
         {
-            Linux = dictionary[nameof(PlatformDto.Linux).ToLower()],
-            Windows = dictionary[nameof(PlatformDto.Windows).ToLower()],
-            Mac = dictionary[nameof(PlatformDto.Mac).ToLower()],
+            { nameof(Platforms.Linux), platform.Linux },
+            { nameof(Platforms.Windows), platform.Windows },
+            { nameof(Platforms.Mac), platform.Mac }
         };
+
+        return dictionary;
     }
 }
+

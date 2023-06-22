@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Text.Json;
+using GamingApi.Games;
 using GamingApi.SharedKernel.IoC;
 using GamingApi.SharedKernel.Mapping;
 using Microsoft.AspNetCore.Rewrite;
@@ -43,7 +44,10 @@ public sealed class Startup
 
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(_mediatRAssemblies));
 
-        services.AddHttpClient("yld.gamesfeed", httpClient => httpClient.BaseAddress = new Uri("https://yld-recruitment-resources.s3.eu-west-2.amazonaws.com"));
+        services.AddHttpClient(
+            Connections.SteamGamesFeed.Name,
+            httpClient => httpClient.BaseAddress = new Uri(Connections.SteamGamesFeed.BaseUrl)
+        );
 
 
         services.ScanAsSelf<IMiddleware>(_mediatRAssemblies);

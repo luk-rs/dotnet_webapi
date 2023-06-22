@@ -20,6 +20,6 @@ public abstract class Mapper<TSource, TTarget> : IMapper<TSource, TTarget>
 {
     public bool Maps<TExpectedSource, TExpectedTarget>()
     {
-        return (this as IMapper<TSource, TTarget>).Maps<TExpectedSource, TExpectedTarget>();
+        return (this as IMapper<TSource, TTarget>)?.Maps<TExpectedSource, TExpectedTarget>() ?? false;
     }
 }
