@@ -45,9 +45,9 @@ public sealed class Startup
 
         services.AddHttpClient("yld.gamesfeed", httpClient => httpClient.BaseAddress = new Uri("https://yld-recruitment-resources.s3.eu-west-2.amazonaws.com"));
 
-        services.AddTransient<ExceptionFormatterMiddleware>();
 
         services.ScanAsSelf<IMiddleware>(_mediatRAssemblies);
+
         services.ScanAsSelf(_mediatRAssemblies, typeof(Mapper<,>));
 
     }
