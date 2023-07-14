@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamingApi.WebApi.Specflow",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kernel", "Kernel", "{F0CE4ABB-B993-4CFE-B764-C614BDD451AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamingApi.Consumer", "src\GamingApi.Consumer\GamingApi.Consumer.csproj", "{900B94C4-386C-4312-A06B-E3B8E9DADF9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{1CF94013-FC80-4303-A84B-31C3E66C23E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF94013-FC80-4303-A84B-31C3E66C23E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF94013-FC80-4303-A84B-31C3E66C23E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900B94C4-386C-4312-A06B-E3B8E9DADF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900B94C4-386C-4312-A06B-E3B8E9DADF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900B94C4-386C-4312-A06B-E3B8E9DADF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900B94C4-386C-4312-A06B-E3B8E9DADF9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

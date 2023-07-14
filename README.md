@@ -13,7 +13,7 @@ This is a RESTful API for gaming-related functionality.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your/repository.git`
+1. Clone the repository: `git clone https://github.com/luk-rs/dotnet_webapi.git`
 
 2. Build the solution using your preferred development environment.
 
